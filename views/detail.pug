@@ -1,0 +1,10 @@
+doctype html
+html   
+    head
+        title #{pageTitle} | #{siteName}
+    body
+        h1= movie.title
+        h4= movie.summary
+        ul.list 
+            each genre in movie.genres
+                li= genre
