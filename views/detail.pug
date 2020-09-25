@@ -1,10 +1,10 @@
-doctype html
-html   
-    head
-        title #{pageTitle} | #{siteName}
-    body
-        h1= movie.title
-        h4= movie.summary
-        ul.list 
-            each genre in movie.genres
-                li= genre
+extends layouts/main
+include mixins/movieBlock
+
+
+block contents
+        +movieDetail({
+            title:movie.title,
+            summary:movie.summary,
+            genres:movie.genres,
+        })

@@ -1,9 +1,11 @@
-doctype html
-html   
-    head
-        title #{pageTitle} | #{siteName}
-    body
+extends layouts/main
+include mixins/movieBlock
+
+block contents
         h1 #{title}
             each movie in movies
-                a(href=`/${movie.id}`)
-                    p= movie.title
+                +movieAll({
+                    id:movie.id,
+                    title:movie.title
+                })
+          
